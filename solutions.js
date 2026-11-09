@@ -25,5 +25,14 @@ function concatenateArrays(...arrays) {
     }
     return combined;
 }
-console.log(concatenateArrays(["a", "b"], ["c", "d"], ["e", "f"]));
+function getPopularCourses(courses, minStudents) {
+    return courses.filter((course) => course.isPublished && course.students >= minStudents);
+}
+const courses = [
+    { title: "TypeScript Mastery", students: 12, isPublished: true },
+    { title: "Draft Course", students: 86, isPublished: false },
+    { title: "Basic HTML", students: 45, isPublished: true },
+    { title: "Next.js Pro", students: 85, isPublished: true }
+];
+console.log(getPopularCourses(courses, 50));
 //# sourceMappingURL=solutions.js.map
