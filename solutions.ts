@@ -14,7 +14,14 @@ function processInput(input: string | number | boolean): string | number {
   return input ? "Active" : "Inactive";
 }
 
-console.log(processInput("  Type    Scri  Pt  "),
-processInput(7),
-processInput(true),
-processInput(false));
+function formatCoordinate(
+  coordinate: readonly [number, number, string]
+): string {
+  const latitude = coordinate[0];
+  const longitude = coordinate[1];
+  const locationName = coordinate[2];
+
+  return `Location: ${locationName} (${latitude}, ${longitude})`;
+}
+
+console.log(formatCoordinate([343.43,3455.5,"New York"]),formatCoordinate([22.35, 91.78, "Chittagong"]))
