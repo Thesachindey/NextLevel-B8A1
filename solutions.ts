@@ -58,7 +58,6 @@ class Employee {
     return `Employee: ${this.name}, Base Salary: ${this.baseSalary}`;
   }
 }
-
 class Manager extends Employee {
   constructor(
     name: string,
