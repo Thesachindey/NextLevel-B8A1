@@ -18,5 +18,12 @@ function formatCoordinate(coordinate) {
     const locationName = coordinate[2];
     return `Location: ${locationName} (${latitude}, ${longitude})`;
 }
-console.log(formatCoordinate([343.43, 3455.5, "New York"]), formatCoordinate([22.35, 91.78, "Chittagong"]));
+function concatenateArrays(...arrays) {
+    const combined = [];
+    for (const array of arrays) {
+        combined.push(...array);
+    }
+    return combined;
+}
+console.log(concatenateArrays(["a", "b"], ["c", "d"], ["e", "f"]));
 //# sourceMappingURL=solutions.js.map

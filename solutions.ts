@@ -24,4 +24,12 @@ function formatCoordinate(
   return `Location: ${locationName} (${latitude}, ${longitude})`;
 }
 
-console.log(formatCoordinate([343.43,3455.5,"New York"]),formatCoordinate([22.35, 91.78, "Chittagong"]))
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+  const combined: T[] = [];
+  for (const array of arrays) {
+    combined.push(...array);
+  }
+  return combined;
+}
+
+console.log(concatenateArrays(["a", "b"], ["c", "d"], ["e", "f"]));
