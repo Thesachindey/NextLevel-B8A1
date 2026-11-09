@@ -44,10 +44,18 @@ function getPopularCourses(courses: Course[], minStudents: number): Course[] {
   );
 }
 
-const courses = [
-  { title: "TypeScript Mastery", students: 12, isPublished: true },
-  { title: "Draft Course", students: 86, isPublished: false },
-  { title: "Basic HTML", students: 45, isPublished: true },
-  { title: "Next.js Pro", students: 85, isPublished: true }
+function pluckValues<T, K extends keyof T>(items: T[], key: K): T[K][] {
+  return items.map((item: T): T[K] => item[key]);
+}
+
+const users = [
+  { id: 1, name: "Rakib", role: "Admin" },
+  { id: 2, name: "Sadia", role: "Editor" },
+  { id: 3, name: "Tariq", role: "Subscriber" }
 ];
-console.log(getPopularCourses(courses, 50))
+
+
+console.log(pluckValues(users, "name")); // Output: ["Rakib", "Sadia", "Tariq"]
+console.log(pluckValues(users, "id"));   // Output: [1, 2, 3]
+console.log(pluckValues(users, "role")); // Output: ["Admin", "Editor", "Subscriber"]
+

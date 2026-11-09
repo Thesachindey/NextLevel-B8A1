@@ -28,11 +28,15 @@ function concatenateArrays(...arrays) {
 function getPopularCourses(courses, minStudents) {
     return courses.filter((course) => course.isPublished && course.students >= minStudents);
 }
-const courses = [
-    { title: "TypeScript Mastery", students: 12, isPublished: true },
-    { title: "Draft Course", students: 86, isPublished: false },
-    { title: "Basic HTML", students: 45, isPublished: true },
-    { title: "Next.js Pro", students: 85, isPublished: true }
+function pluckValues(items, key) {
+    return items.map((item) => item[key]);
+}
+const users = [
+    { id: 1, name: "Rakib", role: "Admin" },
+    { id: 2, name: "Sadia", role: "Editor" },
+    { id: 3, name: "Tariq", role: "Subscriber" }
 ];
-console.log(getPopularCourses(courses, 50));
+console.log(pluckValues(users, "name")); // Output: ["Rakib", "Sadia", "Tariq"]
+console.log(pluckValues(users, "id")); // Output: [1, 2, 3]
+console.log(pluckValues(users, "role")); // Output: ["Admin", "Editor", "Subscriber"]
 //# sourceMappingURL=solutions.js.map
